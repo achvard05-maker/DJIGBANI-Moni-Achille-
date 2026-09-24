@@ -11,7 +11,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
   if (!project) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-[#050505]/85 backdrop-blur-md animate-in fade-in duration-200">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-[#050505]/85 backdrop-blur-md animate-in fade-in duration-200 print:hidden">
       <div
         className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto glass-panel rounded-3xl border border-white/10 p-6 sm:p-8 space-y-6 shadow-2xl bg-[#0a0a0f] text-white"
         onClick={(e) => e.stopPropagation()}
@@ -37,9 +37,16 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
               projet://{project.id}
             </span>
           </div>
-          <h2 className="text-2xl sm:text-3xl font-black font-['Geist'] text-white uppercase tracking-tight">
-            {project.title}<span className="text-cyan-400">.</span>
-          </h2>
+          <div className="flex items-center justify-between gap-3">
+            <h2 className="text-2xl sm:text-3xl font-black font-['Geist'] text-white uppercase tracking-tight">
+              {project.title}<span className="text-cyan-400">.</span>
+            </h2>
+            {project.category && (
+              <span className="text-xs font-mono px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-300">
+                {project.category}
+              </span>
+            )}
+          </div>
         </div>
 
         {/* Description */}
@@ -50,6 +57,17 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
           <p className="text-sm sm:text-base text-white/70 leading-relaxed">
             {project.description || project.fullDescription || project.shortDescription}
           </p>
+
+          {/* Tags */}
+          {project.tags && project.tags.length > 0 && (
+            <div className="flex flex-wrap gap-2 pt-2">
+              {project.tags.map((tag, idx) => (
+                <span key={idx} className="px-2.5 py-1 rounded-lg text-xs font-mono bg-white/5 border border-white/10 text-white/70">
+                  {tag}
+                </span>
+              ))}
+            </div>
+          )}
         </div>
 
         {/* Participation / Mon Rôle */}

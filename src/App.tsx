@@ -64,7 +64,7 @@ export default function App() {
       />
 
       {/* Main Content Flow */}
-      <main className="space-y-8">
+      <main className="space-y-8 print:hidden">
         <Hero
           onOpenTerminal={() => setTerminalOpen(true)}
           onOpenResume={() => setResumeOpen(true)}

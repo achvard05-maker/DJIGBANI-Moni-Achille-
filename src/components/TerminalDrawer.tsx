@@ -194,7 +194,7 @@ export const TerminalDrawer: React.FC<TerminalDrawerProps> = ({ isOpen, onClose 
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-[#050505]/85 backdrop-blur-md animate-in fade-in duration-200">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-[#050505]/85 backdrop-blur-md animate-in fade-in duration-200 print:hidden">
       <div
         className="relative w-full max-w-2xl h-[500px] glass-panel rounded-2xl border border-white/10 p-4 flex flex-col bg-[#050505] text-white shadow-2xl font-mono text-xs"
         onClick={(e) => e.stopPropagation()}

@@ -111,6 +111,18 @@ export const projects: Project[] = [
     tags: ["Node.js", "SQLite", "Crypto", "TypeScript", "WebRTC"],
     githubUrl: "https://github.com/achvard05-maker/TCCHackDefend2026_Tec.Brain_SantePocket",
     featured: true
+  },
+  {
+    id: "ebudget",
+    title: "E-Budget",
+    description: "Application web de gestion de budget personnel et de finances, permettant le suivi des dépenses en temps réel, la répartition budgétaire par catégorie, la gestion de l'épargne et l'historique financier.",
+    participation: "Développement full-stack : modélisation de la base de données MySQL, implémentation des API REST en PHP (requêtes préparées PDO), système d'authentification et interface dashboard avec Bootstrap et JavaScript.",
+    shortDescription: "Application web de gestion de budget personnel et de finances.",
+    fullDescription: "E-Budget (Mon Porte-Monnaie) est une solution web complète pour la maîtrise des finances personnelles. L'application propose un tableau de bord analytique, la création et le suivi dynamique de budgets par catégorie, un module d'objectifs d'épargne, l'historique des transactions et une sécurisation des comptes avec requêtes préparées.",
+    category: "Full-Stack",
+    tags: ["PHP", "MySQL", "JavaScript", "Bootstrap", "API REST"],
+    githubUrl: "https://github.com/achvard05-maker/Projet_Ebudget.git",
+    featured: true
   }
 ];
 

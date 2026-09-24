@@ -50,15 +50,36 @@ export const Projects: React.FC<ProjectsProps> = ({ onSelectProject }) => {
                   </span>
                 </div>
 
-                <h3 className="text-2xl font-bold font-['Geist'] text-white uppercase tracking-tight group-hover:text-cyan-400 transition-colors">
-                  {project.title}
-                </h3>
+                <div className="flex items-center justify-between gap-2">
+                  <h3 className="text-2xl font-bold font-['Geist'] text-white uppercase tracking-tight group-hover:text-cyan-400 transition-colors">
+                    {project.title}
+                  </h3>
+                  {project.category && (
+                    <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-300 shrink-0">
+                      {project.category}
+                    </span>
+                  )}
+                </div>
               </div>
 
               {/* Description */}
               <p className="text-sm text-white/70 leading-relaxed">
                 {project.description || project.fullDescription || project.shortDescription}
               </p>
+
+              {/* Tags */}
+              {project.tags && project.tags.length > 0 && (
+                <div className="flex flex-wrap gap-1.5 pt-1">
+                  {project.tags.map((tag, tIdx) => (
+                    <span
+                      key={tIdx}
+                      className="px-2 py-0.5 rounded text-[10px] font-mono bg-white/5 border border-white/10 text-white/60"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              )}
             </div>
 
             {/* Bottom: Partie Participation */}
